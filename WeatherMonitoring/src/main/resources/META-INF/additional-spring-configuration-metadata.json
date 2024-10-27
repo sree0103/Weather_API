@@ -1,0 +1,37 @@
+{"properties": [
+  {
+    "name": "weather.fetchInterval",
+    "type": "java.lang.String",
+    "description": "A description for 'weather.fetch.interval'"
+  },
+  {
+    "name": "weather.apiKey",
+    "type": "java.lang.String",
+    "description": "A description for 'weather.api.key'"
+  },
+  {
+    "name": "spring.web.csp.policy",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.web.csp.policy'"
+  },
+  {
+    "name": "weather.alert.email",
+    "type": "java.lang.String",
+    "description": "A description for 'weather.alert.email'"
+  },
+  {
+    "name": "sendgrid.apiKey",
+    "type": "java.lang.String",
+    "description": "A description for 'sendgrid.apiKey'"
+  },
+  {
+    "name": "sendgrid.apiKey",
+    "type": "java.lang.String",
+    "description": "A description for 'sendgrid.apiKey'"
+  },
+  {
+    "name": "sendgrid.apiKey",
+    "type": "java.lang.String",
+    "description": "A description for 'sendgrid.apiKey'"
+  }
+]}

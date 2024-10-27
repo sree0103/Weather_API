@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="'Weather for ' + ${city}"></title>
+    <link rel="stylesheet" type="text/css" href="/css/weather.css">
+</head>
+<body>
+    <div class="container">
+        <h1 th:text="'Weather for ' + ${city}"></h1>
+
+        <div th:if="${weatherData}" class="weather-card">
+            <h2>Current Weather</h2>
+            <p>Condition: <span th:text="${weatherData.weatherCondition}"></span></p>
+            <p>Temperature: <span th:text="${weatherData.tempCelsius}"></span> °C</p>
+            <p>Feels Like: <span th:text="${weatherData.feelsLikeCelsius}"></span> °C</p>
+            <p>Min Temperature: <span th:text="${weatherData.tempMinCelsius}"></span> °C</p>
+            <p>Max Temperature: <span th:text="${weatherData.tempMaxCelsius}"></span> °C</p>
+            <p>Timestamp: <span th:text="${#dates.format(weatherData.timestamp, 'dd/MM/yyyy HH:mm')}"></span></p>
+        </div>
+
+        <div th:if="${errorMessage}" class="error-message">
+            <p th:text="${errorMessage}"></p>
+        </div>
+
+      
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Weather Summary for [[${city}]]</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/weather-summary.js" defer></script>
+</head>
+<body>
+    <h1>Weather Summary for [[${city}]]</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Average Temperature</th>
+                <th>Max Temperature</th>
+                <th>Min Temperature</th>
+                <th>Dominant Weather Condition</th> <!-- New Column -->
+                <th>Alert Breach</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="summary, iterStat : ${summaries}">
+                <td th:text="${summary.date}"></td>
+                <td th:text="${summary.avgTemperature}"></td>
+                <td th:text="${summary.maxTemperature}"></td>
+                <td th:text="${summary.minTemperature}"></td>
+                <td th:text="${summary.dominantWeatherCondition}"></td> <!-- New Data -->
+                <td>
+                    <span th:if="${breaches[iterStat.index]}" class="alert-breach">Breach!</span>
+                    <span th:if="${!breaches[iterStat.index]}">No Breach</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
